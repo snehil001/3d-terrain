@@ -5,10 +5,60 @@
 canvas {
   display: block;
 }
-#message{
-	width: 100%;
-	color: #999;
-	font-size: 25px;
-	text-align: center;
-	position: absolute;
+
+p{
+	color: #aaa;
+  font-size: 20px;
+  position: absolute;
+  right: 5px;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 771px){
+  .small{
+  	font-size: 10px;
+  }
+  .message1{
+    top: 0px;
+  }
+  .message2{
+    top: 10px;
+  }
+  .message3{
+  	top: 20px;
+  }
+}
+@media (min-width: 772px) and (max-width: 1199px) {
+  .mid{
+  	font-size: 15px;
+  }
+  .message1 {
+    top: 0px; 
+  }
+  .message2{
+  	top: 15px;
+  }
+  .message3{
+  	top: 30px;
+  }
+}
+@media (min-width: 1200px){
+	.large{
+  	font-size: 20px;
+  }
+  .message1{
+  	top: 0px;
+  }
+  .message2{
+  	top: 20px;
+  }
+  .message3{
+    top: 40px;
+  }
 }

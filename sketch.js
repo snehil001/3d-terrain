@@ -28,25 +28,28 @@ function setup(){
 function draw(){
 
   let time = frameCount;
+  
   textAlign(CENTER);
-  fill(145, 206, 235);
   textFont(font);
+  fill(145, 206, 235);
   textSize(30);
-  if(time <= 480){
+  if(time <= 360){
   	background(0);
     text('Hi, XYZ', 0, -100);
-	  if(time > 120 && time <= 360){
+	  if(time > 120){
 	    text('This is a gift for you', 0, -30);
-	    if(time > 240 && time <= 360){
+	    if(time > 240){
 	      text('from', 0, 50);
 	      text('abc', 0, 80);
 	    }
-	  }else if(time > 360 && time <= 480){
+    }
+	}else if(time <= 480){
 	    textSize(50);
 	    background(0);
 	    text('3D Terrain', 0, 0);
-	  }
   }else{
+    
+    background(0);
     
     flying -= 0.08;
     var yoff = flying;
@@ -59,16 +62,16 @@ function draw(){
       }
       yoff += 0.1;
     }
-    
-    background(0);
-    stroke(10);
-    fill(145, 206, 235, 200);
-    
+
+
     translate(0, 50);
     rotateX(PI/2.6);
     translate(-w/2, -h/2);
     
-    stroke(20)
+
+    fill(145, 206, 235, 130);
+    stroke(145, 206, 235);
+
     for(var y = 0; y < rows-1; y++){
       beginShape(TRIANGLE_STRIP);
       for(var x = 0; x < cols; x++){
@@ -89,5 +92,15 @@ function mouseReleased() {
   	loop();
   }
   console.log('Mouse is pressed');
+  return false;
+}
+
+function touchEnded() {
+  if(isLooping()){
+    noLoop();
+  }else{
+    loop();
+  }
+  console.log('Touched');
   return false;
 }

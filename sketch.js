@@ -8,7 +8,8 @@ var flying = 0;
 let font;
 
 function preload(){
-  font = loadFont('HARNGTON.ttf');
+  // font = loadFont('HARNGTON.ttf');
+  font = loadFont('mirror 82_v2.otf');
 }
 
 function setup(){

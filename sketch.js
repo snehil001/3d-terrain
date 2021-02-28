@@ -88,4 +88,6 @@ function mousePressed() {
   }else{
   	loop();
   }
+  console.log('Mouse is pressed');
+  return false;
 }

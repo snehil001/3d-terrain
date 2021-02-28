@@ -8,7 +8,6 @@ var flying = 0;
 let font;
 
 function preload(){
-  // font = loadFont('HARNGTON.ttf');
   font = loadFont('mirror 82_v2.otf');
 }
 
@@ -35,12 +34,12 @@ function draw(){
   textSize(30);
   if(time <= 360){
   	background(0);
-    text('Hi, XYZ', 0, -100);
+    text('Hi XYZ,', 0, -100);
 	  if(time > 120){
-	    text('This is a gift for you', 0, -30);
+	    text('I have a gift for you!', 0, -30);
 	    if(time > 240){
-	      text('from', 0, 50);
-	      text('abc', 0, 80);
+	      text('From,', 0, 50);
+	      text('ABC', 0, 80);
 	    }
     }
 	}else if(time <= 480){
@@ -69,7 +68,7 @@ function draw(){
     translate(-w/2, -h/2);
     
 
-    fill(145, 206, 235, 130);
+    fill(145, 206, 235, 100); //#91ceeb
     stroke(145, 206, 235);
 
     for(var y = 0; y < rows-1; y++){

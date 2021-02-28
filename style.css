@@ -2,15 +2,19 @@
   margin: 0;
   padding: 0;
 }
+
 canvas {
+  position: absolute;
+  top: 0px;
   display: block;
+  z-index: -1;
 }
 
 p{
-	color: #aaa;
   font-size: 20px;
-  position: absolute;
-  right: 5px;
+  text-align: right;
+  font-family: sans-serif;
+  margin-right: 5px;
   
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -20,45 +24,31 @@ p{
   user-select: none;
 }
 
-@media (max-width: 771px){
+.message1{
+  color: #c44;
+}
+.message2{
+  color: #c44;
+}
+.message3{
+  color: #91ceeb;
+}
+
+@media (max-width: 771.5px){
   .small{
-  	font-size: 10px;
-  }
-  .message1{
-    top: 0px;
-  }
-  .message2{
-    top: 10px;
-  }
-  .message3{
-  	top: 20px;
-  }
-}
-@media (min-width: 772px) and (max-width: 1199px) {
-  .mid{
   	font-size: 15px;
-  }
-  .message1 {
-    top: 0px; 
-  }
-  .message2{
-  	top: 15px;
-  }
-  .message3{
-  	top: 30px;
+    text-align: center;
   }
 }
+
+@media (min-width: 772px) and (max-width: 1199.5px) {
+  .mid{
+  	font-size: 17px;
+  }
+}
+
 @media (min-width: 1200px){
 	.large{
   	font-size: 20px;
-  }
-  .message1{
-  	top: 0px;
-  }
-  .message2{
-  	top: 20px;
-  }
-  .message3{
-    top: 40px;
   }
 }

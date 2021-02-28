@@ -82,7 +82,7 @@ function draw(){
   }
 }
 
-function mousePressed() {
+function mouseReleased() {
   if(isLooping()){
   	noLoop();
   }else{

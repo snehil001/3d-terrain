@@ -7,13 +7,18 @@ var h = 900;
 var flying = 0;
 let font;
 
+let start=false;
+
+
 function preload(){
   font = loadFont('mirror 82_v2.otf');
 }
 
 function setup(){
-  createCanvas(windowWidth, windowHeight, WEBGL);  
+  let canvas = createCanvas(windowWidth, windowHeight, WEBGL);  
+  
   background(0);
+  
   cols = w / scl;
   rows = h / scl;
   for(var x = 0; x < cols; x++){
@@ -22,19 +27,34 @@ function setup(){
       terrain[x][y] = 0;
     }
   }  
-}
-
-function draw(){
-
-  let time = frameCount;
+ 
+  canvas.mouseClicked(playPause);
   
+  //initial text waiting for a click or tap
   textAlign(CENTER);
   textFont(font);
   fill(145, 206, 235);
   textSize(30);
+  text('Tap me', 0, 0);
+  
+  noLoop();
+}
+
+
+function playPause(){
+  start=true;
+  isLooping() ? noLoop() : loop();
+  return false;
+}
+
+
+function draw(){
+  if(start){
+  let time = frameCount;
+  
   if(time <= 360){
   	background(0);
-    text('Hi XYZ,', 0, -100);
+    text('Hi Babuna,', 0, -100);
 	  if(time > 120){
 	    text('I have a gift for you!', 0, -30);
 	    if(time > 240){
@@ -81,25 +101,7 @@ function draw(){
       } 
       endShape();
     }
+    
   }
-}
-
-function mouseReleased() {
-  if(isLooping()){
-  	noLoop();
-  }else{
-  	loop();
   }
-  console.log('Mouse is pressed');
-  return false;
-}
-
-function touchEnded() {
-  if(isLooping()){
-    noLoop();
-  }else{
-    loop();
-  }
-  console.log('Touched');
-  return false;
 }
